@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 6px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --background: #FAFBF7;
+  --foreground: #15293A;
+  --card: #FFFFFF;
+  --card-foreground: #15293A;
+  --popover: #FFFFFF;
+  --popover-foreground: #15293A;
+  --primary: #135126;
+  --primary-foreground: #FFFFFF;
+  --secondary: #DEEFE4;
+  --secondary-foreground: #135126;
+  --muted: #F2F7F9;
+  --muted-foreground: #555555;
+  --accent: #FFBB40;
+  --accent-foreground: #15293A;
+  --destructive: #EB5F5A;
+  --destructive-foreground: #FFFFFF;
+  --border: #D0CDD3;
+  --input: #D0CDD3;
+  --ring: #135126;
+  --radius: 4px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes sheet-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-sheet-slide-up {
+  animation: sheet-slide-up 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-overlay-fade-in {
+  animation: overlay-fade-in 0.22s ease-out;
+}
+
+/* Soft frosted glass surfaces inspired by sleek digital product design */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 32px -12px rgba(21, 41, 58, 0.08);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(208, 205, 211, 0.55);
+}
+
+.glass-panel-dark {
+  background: rgba(21, 41, 58, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-nav {
+  background: rgba(250, 251, 247, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(208, 205, 211, 0.6);
+}
+
+/* Atmospheric sage-to-mist gradient inspired by calm digital product surfaces */
+.hero-sage-atmosphere {
+  background:
+    radial-gradient(ellipse 85% 90% at 15% 55%, rgba(19, 81, 38, 0.86) 0%, rgba(66, 116, 81, 0.72) 38%, rgba(161, 185, 168, 0.35) 68%, rgba(250, 251, 247, 0.96) 100%),
+    linear-gradient(125deg, #1b4d2b 0%, #427451 40%, #deefe4 78%, #fafbf7 100%);
+}
+
+/* Subtle vertical fluted glass ribs over atmospheric sage washes */
+.fluted-glass-overlay {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.07) 0px,
+    rgba(255, 255, 255, 0.07) 1px,
+    rgba(255, 255, 255, 0.015) 1px,
+    rgba(255, 255, 255, 0.015) 9px,
+    rgba(19, 81, 38, 0.03) 9px,
+    rgba(19, 81, 38, 0.03) 10px
+  );
+}
+
+/* Soft sage mist band for serene breathing sections */
+.sage-mist-band {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(222, 239, 228, 0.75) 0%, rgba(250, 251, 247, 0.9) 55%, #FAFBF7 100%),
+    linear-gradient(180deg, #F3F8F4 0%, #FAFBF7 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
