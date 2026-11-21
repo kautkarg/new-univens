@@ -56,14 +56,14 @@ const SheetContent = React.forwardRef<
           side === "left" &&
             "inset-y-0 left-0 h-full w-full sm:max-w-[360px] border-r",
           side === "bottom" &&
-            "inset-x-3 bottom-3 max-h-[88svh] rounded-[16px] border border-[#D0CDD3]/75 bg-white p-5 sm:p-6 shadow-[0_24px_60px_-12px_rgba(11,23,18,0.35)] animate-sheet-slide-up",
+            "inset-x-3 bottom-3 max-h-[88svh] rounded-[6px] border border-[#D0CDD3]/75 bg-white p-5 sm:p-6 shadow-[0_24px_60px_-12px_rgba(11,23,18,0.35)] animate-sheet-slide-up",
           className
         )}
         {...props}
       >
         {children}
         {!hideCloseButton && (
-          <DialogPrimitive.Close className="absolute right-4 top-4 rounded-full p-2 text-[#555555] hover:bg-[#F2F7F9] hover:text-[#15293A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#135126] cursor-pointer">
+          <DialogPrimitive.Close className="absolute right-4 top-4 rounded-[4px] p-2 text-[#475D6F] hover:bg-[#F2F7F9] hover:text-[#15293A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#135126] cursor-pointer">
             <X className="h-5 w-5" />
             <span className="sr-only">Close</span>
           </DialogPrimitive.Close>
@@ -106,7 +106,7 @@ const SheetDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn("text-sm text-[#555555] leading-relaxed", className)}
+    className={cn("text-sm text-[#475D6F] leading-relaxed", className)}
     {...props}
   />
 ));

@@ -164,7 +164,7 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
                 ? "Your executive brief is ready for review."
                 : "Your opportunity preferences are saved."}
             </h3>
-            <p className="text-sm text-[#555555]">
+            <p className="text-sm text-[#284054]">
               Thank you, {savedRecord.name}. We will respond to{" "}
               <span className="font-medium text-[#15293A]">
                 {savedRecord.email}
@@ -175,7 +175,7 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
         </div>
 
         <div className="rounded-[4px] border border-[#D0CDD3] bg-[#FAFBF7] p-4 space-y-3 text-sm">
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[#555555]">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-[#284054]">
             <span>
               Profile:{" "}
               <strong className="font-medium text-[#15293A]">
@@ -194,14 +194,14 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
             )}
           </div>
           <div>
-            <span className="text-xs text-[#555555]">Selected Focus Areas:</span>
+            <span className="text-xs text-[#284054]">Selected Focus Areas:</span>
             <p className="mt-1 font-medium text-[#15293A]">
               {savedRecord.interests.join(" · ")}
             </p>
           </div>
           {savedRecord.objective && (
             <div>
-              <span className="text-xs text-[#555555]">Executive Context:</span>
+              <span className="text-xs text-[#284054]">Executive Context:</span>
               <p className="mt-1 text-[#15293A]">{savedRecord.objective}</p>
             </div>
           )}
@@ -221,24 +221,24 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
     <form
       onSubmit={handleSubmit}
       className={cn(
-        "rounded-[6px] border border-[#D0CDD3]/80 bg-white/85 backdrop-blur-md space-y-6",
-        compact ? "p-5 sm:p-6" : "p-6 sm:p-8"
+        "rounded-[6px] border border-[#D0CDD3]/80 bg-white/85 backdrop-blur-md space-y-4",
+        compact ? "p-4 sm:p-5" : "p-5 sm:p-6"
       )}
     >
       {/* Mode Switcher */}
-      <div className="space-y-2">
-        <span className="block text-xs font-medium text-[#555555]">
+      <div className="space-y-1.5">
+        <span className="block text-xs font-medium text-[#284054]">
           How would you like to engage?
         </span>
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 rounded-[4px] border border-[#D0CDD3] bg-[#FAFBF7] p-1">
+        <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 rounded-[4px] border border-[#D0CDD3] bg-[#FAFBF7] p-1">
           <button
             type="button"
             onClick={() => setMode("brief")}
             className={cn(
-              "rounded-[4px] px-4 py-2.5 text-left text-sm font-medium transition-colors cursor-pointer",
+              "rounded-[4px] px-3 py-2 text-left text-xs sm:text-sm font-medium transition-colors cursor-pointer",
               mode === "brief"
                 ? "bg-[#135126] text-white"
-                : "text-[#555555] hover:text-[#15293A]"
+                : "text-[#284054] hover:text-[#15293A]"
             )}
           >
             Explore Execution Brief
@@ -247,10 +247,10 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
             type="button"
             onClick={() => setMode("opportunities")}
             className={cn(
-              "rounded-[4px] px-4 py-2.5 text-left text-sm font-medium transition-colors cursor-pointer",
+              "rounded-[4px] px-3 py-2 text-left text-xs sm:text-sm font-medium transition-colors cursor-pointer",
               mode === "opportunities"
                 ? "bg-[#135126] text-white"
-                : "text-[#555555] hover:text-[#15293A]"
+                : "text-[#284054] hover:text-[#15293A]"
             )}
           >
             Register Opportunity Alerts
@@ -259,71 +259,71 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
       </div>
 
       {/* ICP Role Selector */}
-      <div className="space-y-2">
-        <span className="block text-xs font-medium text-[#555555]">
+      <div className="space-y-1.5">
+        <span className="block text-xs font-medium text-[#284054]">
           Your Perspective
         </span>
-        <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
           <button
             type="button"
             onClick={() => setIcpRole("business")}
             className={cn(
-              "rounded-[4px] border p-3.5 text-left transition-all cursor-pointer",
+              "rounded-[4px] border p-2.5 sm:p-3 text-left transition-all cursor-pointer",
               icpRole === "business"
                 ? "border-[#135126] bg-[#DEEFE4]/40"
                 : "border-[#D0CDD3] bg-white hover:border-[#15293A]/40"
             )}
           >
-            <div className="font-display text-sm font-semibold text-[#15293A]">
+            <div className="font-display text-xs sm:text-sm font-semibold text-[#15293A]">
               Founder / CXO / Business Leader
             </div>
-            <p className="mt-0.5 text-xs text-[#555555]">
-              Seeking specialist execution without building everything in-house
+            <p className="mt-0.5 text-[11.5px] leading-snug text-[#284054]">
+              Specialist execution without building in-house
             </p>
           </button>
           <button
             type="button"
             onClick={() => setIcpRole("partner")}
             className={cn(
-              "rounded-[4px] border p-3.5 text-left transition-all cursor-pointer",
+              "rounded-[4px] border p-2.5 sm:p-3 text-left transition-all cursor-pointer",
               icpRole === "partner"
                 ? "border-[#135126] bg-[#DEEFE4]/40"
                 : "border-[#D0CDD3] bg-white hover:border-[#15293A]/40"
             )}
           >
-            <div className="font-display text-sm font-semibold text-[#15293A]">
+            <div className="font-display text-xs sm:text-sm font-semibold text-[#15293A]">
               Partner / Agency / Consultant
             </div>
-            <p className="mt-0.5 text-xs text-[#555555]">
-              Seeking dependable engineering & delivery capacity for clients
+            <p className="mt-0.5 text-[11.5px] leading-snug text-[#284054]">
+              Dependable engineering &amp; delivery capacity
             </p>
           </button>
         </div>
       </div>
 
       {/* Focus Areas */}
-      <div className="space-y-2.5">
+      <div className="space-y-1.5">
         <div className="flex items-baseline justify-between gap-2">
-          <span className="text-xs font-medium text-[#555555]">
+          <span className="text-xs font-medium text-[#284054]">
             {mode === "brief"
               ? "Capabilities or priorities involved"
               : "Opportunities of your interest"}
           </span>
-          <span className="text-xs text-[#555555] tabular-nums">
+          <span className="text-xs text-[#284054] tabular-nums">
             {selectedInterests.length} selected
           </span>
         </div>
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
           {interestOptions.map((item) => {
             const checked = selectedInterests.includes(item);
             return (
               <label
                 key={item}
                 className={cn(
-                  "flex items-center gap-2.5 rounded-[4px] border px-3 py-2.5 text-sm transition-colors cursor-pointer",
+                  "flex items-center gap-2 rounded-[4px] border px-2.5 py-1.5 text-xs sm:text-[13px] transition-colors cursor-pointer",
                   checked
                     ? "border-[#135126] bg-[#FAFBF7] text-[#15293A] font-medium"
-                    : "border-[#D0CDD3]/80 bg-white text-[#555555] hover:border-[#15293A]/40"
+                    : "border-[#D0CDD3]/80 bg-white text-[#284054] hover:border-[#15293A]/40"
                 )}
               >
                 <Checkbox
@@ -338,10 +338,10 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
       </div>
 
       {/* Objective */}
-      <div className="space-y-1.5">
+      <div className="space-y-1">
         <label
           htmlFor={`objective-${compact ? "drawer" : "page"}`}
-          className="block text-xs font-medium text-[#555555]"
+          className="block text-xs font-medium text-[#284054]"
         >
           {mode === "brief"
             ? "What are you trying to achieve? (No formal specification needed)"
@@ -356,16 +356,16 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
               ? "e.g., We want to automate order workflows across branches or build a dedicated product team in India..."
               : "e.g., B2B SaaS partnerships in APAC, industrial distribution, or AI workflow blueprints..."
           }
-          className="min-h-[88px]"
+          className="min-h-[60px] py-2"
         />
       </div>
 
       {/* Contact Info */}
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
         <div className="space-y-1">
           <label
             htmlFor={`name-${compact ? "drawer" : "page"}`}
-            className="block text-xs font-medium text-[#555555]"
+            className="block text-xs font-medium text-[#284054]"
           >
             Your Name *
           </label>
@@ -374,12 +374,13 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g., Sharad Mehta"
+            className="h-9"
           />
         </div>
         <div className="space-y-1">
           <label
             htmlFor={`org-${compact ? "drawer" : "page"}`}
-            className="block text-xs font-medium text-[#555555]"
+            className="block text-xs font-medium text-[#284054]"
           >
             Company / Role
           </label>
@@ -388,12 +389,13 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
             value={organization}
             onChange={(e) => setOrganization(e.target.value)}
             placeholder="e.g., Meridian Logistics"
+            className="h-9"
           />
         </div>
         <div className="space-y-1">
           <label
             htmlFor={`email-${compact ? "drawer" : "page"}`}
-            className="block text-xs font-medium text-[#555555]"
+            className="block text-xs font-medium text-[#284054]"
           >
             Work Email *
           </label>
@@ -403,6 +405,7 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="name@company.com"
+            className="h-9"
           />
         </div>
       </div>
@@ -410,17 +413,17 @@ export const CxoBriefSelector: React.FC<CxoBriefSelectorProps> = ({
       {errorMsg && (
         <p
           role="alert"
-          className="rounded-[4px] border border-[#EB5F5A]/50 bg-[#FFC1BF]/25 px-3.5 py-2.5 text-sm text-[#15293A]"
+          className="rounded-[4px] border border-[#EB5F5A]/50 bg-[#FFC1BF]/25 px-3 py-2 text-xs sm:text-sm text-[#15293A]"
         >
           {errorMsg}
         </p>
       )}
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between pt-1">
-        <p className="text-xs text-[#555555]">
+      <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between pt-0.5">
+        <p className="text-xs text-[#284054]">
           Direct leadership response within 1 business day.
         </p>
-        <Button type="submit" size="lg">
+        <Button type="submit" size="default">
           {mode === "brief"
             ? "Send Executive Brief"
             : "Save Opportunity Preferences"}

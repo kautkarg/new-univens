@@ -102,7 +102,7 @@ export default function App() {
         onOpenBrief={handleOpenBrief}
       />
 
-      <main className={activePage === "home" ? "flex-1" : "flex-1 pt-20"}>
+      <main className="flex-1">
         {activePage === "home" && (
           <HomePage
             onNavigate={handleNavigate}

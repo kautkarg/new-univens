@@ -33,7 +33,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
     );
 
     return (
-      <section className="flex min-h-screen flex-col justify-center w-full bg-[#FAFBF7] py-16 lg:py-24">
+      <section className="section-viewport flex flex-col justify-center w-full bg-[#FAFBF7] pt-[calc(var(--navbar-height,80px)+1.25rem)] pb-[calc(var(--navbar-height,80px)+1.25rem)]">
         <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 lg:px-6">
           <button
             type="button"
@@ -46,7 +46,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
 
           <article className="mt-10 max-w-4xl rounded-[6px] border border-[#D0CDD3] bg-white p-8 sm:p-12 space-y-10">
             <div className="space-y-4">
-              <div className="flex flex-wrap items-center gap-2 text-xs text-[#555555] tabular-nums">
+              <div className="flex flex-wrap items-center gap-2 text-xs text-[#284054] tabular-nums">
                 <span className="font-medium text-[#135126]">
                   {activeBlueprint.published}
                 </span>
@@ -58,7 +58,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
               <h1 className="font-display text-3xl font-bold leading-tight text-[#15293A] sm:text-4xl">
                 {activeBlueprint.title}
               </h1>
-              <p className="text-lg leading-relaxed text-[#555555]">
+              <p className="text-lg leading-relaxed text-[#284054]">
                 {activeBlueprint.summary}
               </p>
             </div>
@@ -70,7 +70,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
                   <p className="font-display text-2xl font-bold text-[#135126] tabular-nums">
                     {m.value}
                   </p>
-                  <p className="mt-0.5 text-xs text-[#555555]">{m.label}</p>
+                  <p className="mt-0.5 text-xs text-[#284054]">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -129,7 +129,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
                 <p className="font-display text-base font-semibold text-[#15293A]">
                   Considering a similar path for your business?
                 </p>
-                <p className="text-sm text-[#555555]">
+                <p className="text-sm text-[#284054]">
                   Share your context and we will outline a tailored blueprint.
                 </p>
               </div>
@@ -183,7 +183,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
 
   return (
     <div className="w-full">
-      <section className="relative flex min-h-screen flex-col justify-center overflow-hidden border-b border-[#D0CDD3]/80 sage-mist-band py-20 lg:py-28">
+      <section className="section-viewport relative flex flex-col justify-center overflow-hidden border-b border-[#D0CDD3]/80 sage-mist-band pt-[calc(var(--navbar-height,80px)+1.25rem)] pb-[calc(var(--navbar-height,80px)+1.25rem)]">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 fluted-glass-overlay opacity-40"
@@ -196,7 +196,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
             <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-[#15293A] sm:text-5xl lg:text-[52px]">
               Planning-to-impact blueprints for executive decisions.
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-[#555555]">
+            <p className="max-w-2xl text-lg leading-relaxed text-[#284054]">
               Each blueprint outlines how Univens connects business priorities
               with Indian technology, systems, and commercial capabilities—from
               initial uncertainty to measurable outcomes.
@@ -213,7 +213,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
                   "rounded-[4px] border px-4 py-2 text-sm font-medium transition-colors cursor-pointer",
                   categoryFilter === cat
                     ? "border-[#135126] bg-[#135126] text-white"
-                    : "border-[#D0CDD3] bg-white text-[#555555] hover:text-[#15293A]"
+                    : "border-[#D0CDD3] bg-white text-[#284054] hover:text-[#15293A]"
                 )}
               >
                 {cat === "all" ? "All Blueprints" : cat}
@@ -223,7 +223,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
         </div>
       </section>
 
-      <section className="flex min-h-screen flex-col justify-center bg-white py-24 lg:py-32">
+      <section className="section-viewport flex flex-col justify-center bg-white pt-[calc(var(--navbar-height,80px)+1.25rem)] pb-[calc(var(--navbar-height,80px)+1.25rem)]">
         <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 lg:px-6">
           <div className="grid gap-10 md:grid-cols-2 lg:gap-12">
             {filtered.map((bp) => (
@@ -232,7 +232,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
                 className="flex flex-col justify-between bg-[#FAFBF7] p-2 hover:border-[#135126]"
               >
                 <CardHeader className="space-y-4 p-6 pb-4">
-                  <div className="flex items-center gap-2 text-xs text-[#555555] tabular-nums">
+                  <div className="flex items-center gap-2 text-xs text-[#284054] tabular-nums">
                     <span className="font-medium text-[#135126]">
                       {bp.published}
                     </span>
@@ -246,7 +246,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-8 p-6 pt-2">
-                  <p className="text-sm leading-relaxed text-[#555555] sm:text-base">
+                  <p className="text-sm leading-relaxed text-[#284054] sm:text-base">
                     {bp.summary}
                   </p>
                   <div className="grid grid-cols-3 gap-4 border-y border-[#D0CDD3]/80 py-5">
@@ -255,7 +255,7 @@ export const PossibilitiesPage: React.FC<PossibilitiesPageProps> = ({
                         <p className="font-display text-lg font-bold text-[#135126] tabular-nums">
                           {m.value}
                         </p>
-                        <p className="mt-0.5 text-xs text-[#555555]">
+                        <p className="mt-0.5 text-xs text-[#284054]">
                           {m.label}
                         </p>
                       </div>

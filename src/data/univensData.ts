@@ -81,13 +81,6 @@ export interface PlatformOrEvent {
   summary: string;
 }
 
-export const IMAGES = {
-  heroLandscape: "/src/assets/images/hero_serene_landscape_1794832294194.jpg",
-  founderWorkspace: "/src/assets/images/about_founder_workspace_1794832294826.jpg",
-  architectureHub: "/src/assets/images/case_study_architecture_1794832300055.jpg",
-  directorPortrait: "/src/assets/images/director_portrait_1794832295991.jpg",
-} as const;
-
 export const CLIENT_ECOSYSTEM_NAMES = [
   "Meridian Logistics",
   "Verve Clinical",

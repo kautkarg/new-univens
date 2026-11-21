@@ -51,7 +51,7 @@ export const OfferingsPage: React.FC<OfferingsPageProps> = ({
 
   return (
     <div className="w-full">
-      <section className="relative flex min-h-screen flex-col justify-center overflow-hidden border-b border-[#D0CDD3]/80 sage-mist-band py-20 lg:py-28">
+      <section className="section-viewport relative flex flex-col justify-center overflow-hidden border-b border-[#D0CDD3]/80 sage-mist-band pt-[calc(var(--navbar-height,80px)+1.25rem)] pb-[calc(var(--navbar-height,80px)+1.25rem)]">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 fluted-glass-overlay opacity-40"
@@ -62,7 +62,7 @@ export const OfferingsPage: React.FC<OfferingsPageProps> = ({
             <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-[#15293A] sm:text-5xl lg:text-[52px]">
               Six core strengths engineered for business execution.
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-[#555555]">
+            <p className="max-w-2xl text-lg leading-relaxed text-[#284054]">
               We don&apos;t force your business into a pre-packaged agency tier.
               We start with your priority, define clear deliverables, and bring
               together the exact capabilities required.
@@ -78,7 +78,7 @@ export const OfferingsPage: React.FC<OfferingsPageProps> = ({
                 "rounded-[4px] border px-4 py-2 text-sm font-medium transition-colors cursor-pointer",
                 selectedFilter === "all"
                   ? "border-[#135126] bg-[#135126] text-white"
-                  : "border-[#D0CDD3] bg-white/80 backdrop-blur-sm text-[#555555] hover:text-[#15293A]"
+                  : "border-[#D0CDD3] bg-white/80 backdrop-blur-sm text-[#284054] hover:text-[#15293A]"
               )}
             >
               All 6 Capabilities
@@ -92,7 +92,7 @@ export const OfferingsPage: React.FC<OfferingsPageProps> = ({
                   "rounded-[4px] border px-4 py-2 text-sm font-medium transition-colors cursor-pointer",
                   selectedFilter === pillar.id
                     ? "border-[#135126] bg-[#135126] text-white"
-                    : "border-[#D0CDD3] bg-white/80 backdrop-blur-sm text-[#555555] hover:text-[#15293A]"
+                    : "border-[#D0CDD3] bg-white/80 backdrop-blur-sm text-[#284054] hover:text-[#15293A]"
                 )}
               >
                 <span className="mr-1.5 text-xs opacity-75 tabular-nums">
@@ -105,7 +105,7 @@ export const OfferingsPage: React.FC<OfferingsPageProps> = ({
         </div>
       </section>
 
-      <section className="flex min-h-screen flex-col justify-center bg-white py-24 lg:py-32">
+      <section className="section-viewport flex flex-col justify-center bg-white pt-[calc(var(--navbar-height,80px)+1.25rem)] pb-[calc(var(--navbar-height,80px)+1.25rem)]">
         <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 lg:px-6 space-y-12">
           {visibleStrengths.map((pillar, idx) => {
             const isHighlighted = idx % 3 === 1;
@@ -144,7 +144,7 @@ export const OfferingsPage: React.FC<OfferingsPageProps> = ({
                     <p
                       className={cn(
                         "text-sm leading-relaxed sm:text-base",
-                        isHighlighted ? "text-[#DEEFE4]" : "text-[#555555]"
+                        isHighlighted ? "text-[#DEEFE4]" : "text-[#284054]"
                       )}
                     >
                       {pillar.description}
@@ -229,7 +229,7 @@ export const OfferingsPage: React.FC<OfferingsPageProps> = ({
                       <p
                         className={cn(
                           "text-xs",
-                          isHighlighted ? "text-[#DEEFE4]" : "text-[#555555]"
+                          isHighlighted ? "text-[#DEEFE4]" : "text-[#284054]"
                         )}
                       >
                         Target Outcome:{" "}

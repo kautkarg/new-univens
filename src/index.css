@@ -39,8 +39,8 @@
   --primary-foreground: #FFFFFF;
   --secondary: #DEEFE4;
   --secondary-foreground: #135126;
-  --muted: #F2F7F9;
-  --muted-foreground: #555555;
+  --muted: #EDF5FA;
+  --muted-foreground: #334A5C;
   --accent: #FFBB40;
   --accent-foreground: #15293A;
   --destructive: #EB5F5A;
@@ -49,6 +49,13 @@
   --input: #D0CDD3;
   --ring: #135126;
   --radius: 4px;
+  --navbar-height: 72px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --navbar-height: 56px;
+  }
 }
 
 @layer base {
@@ -69,7 +76,7 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -134,15 +141,15 @@
 
 /* Soft frosted glass surfaces inspired by sleek digital product design */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 12px 32px -12px rgba(21, 41, 58, 0.08);
 }
 
 .glass-panel-subtle {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.68);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(208, 205, 211, 0.55);
@@ -156,7 +163,7 @@
 }
 
 .glass-nav {
-  background: rgba(250, 251, 247, 0.86);
+  background: rgba(250, 251, 247, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(208, 205, 211, 0.6);
@@ -182,11 +189,128 @@
   );
 }
 
-/* Soft sage mist band for serene breathing sections */
+/* Luminous sunlit cloud surface for calm editorial pause */
+.intro-cloud-surface {
+  background-color: #FAFBF7;
+  background-image:
+    radial-gradient(
+      ellipse 70% 50% at 88% 85%,
+      rgba(255, 187, 64, 0.09) 0%,
+      rgba(222, 239, 228, 0.28) 45%,
+      transparent 75%
+    ),
+    linear-gradient(180deg, #F2F8FC 0%, #F7FBFE 48%, #FFFFFF 100%);
+}
+
+/* Serene sky-meadow-sunlight mist band for bright calm sections */
 .sage-mist-band {
+  background-color: #E8F3FA;
+  background-image:
+    radial-gradient(
+      ellipse 68% 58% at 86% 30%,
+      rgba(222, 239, 228, 0.85) 0%,
+      rgba(250, 251, 247, 0.45) 55%,
+      transparent 82%
+    ),
+    radial-gradient(
+      ellipse 64% 52% at 14% 90%,
+      rgba(255, 196, 54, 0.24) 0%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 62% 52% at 86% 92%,
+      rgba(19, 81, 38, 0.14) 0%,
+      transparent 74%
+    ),
+    linear-gradient(180deg, #E8F3FA 0%, #F7FBFE 46%, #F2F8F3 100%);
+}
+
+/* Exact visible viewport height on mobile & desktop (accounts for mobile browser bars) */
+.hero-viewport {
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+}
+
+/* Non-hero sections include the live navbar height so visible height adapts when navbar size changes */
+.section-viewport {
+  min-height: calc(100vh + var(--navbar-height, 80px));
+  min-height: calc(100dvh + var(--navbar-height, 80px));
+}
+
+/* Whisper-light 35mm film grain + localized dark shade behind hero typography */
+.hero-documentary-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  mix-blend-mode: soft-light;
+  opacity: 0.065;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 18% 86%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.2) 100%);
+  mask-image: radial-gradient(ellipse 80% 70% at 18% 86%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.hero-portra-scrim {
   background:
-    radial-gradient(circle at 80% 20%, rgba(222, 239, 228, 0.75) 0%, rgba(250, 251, 247, 0.9) 55%, #FAFBF7 100%),
-    linear-gradient(180deg, #F3F8F4 0%, #FAFBF7 100%);
+    radial-gradient(
+      ellipse 66% 60% at 16% 88%,
+      rgba(6, 10, 8, 0.90) 0%,
+      rgba(6, 10, 8, 0.72) 38%,
+      rgba(6, 10, 8, 0.36) 62%,
+      rgba(6, 10, 8, 0.08) 82%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(6, 10, 8, 0.78) 0%,
+      rgba(6, 10, 8, 0.30) 18%,
+      transparent 34%
+    );
+}
+
+@media (max-width: 767px), (orientation: portrait) {
+  .hero-portra-scrim {
+    background: linear-gradient(
+      to top,
+      rgba(6, 10, 8, 0.90) 0%,
+      rgba(6, 10, 8, 0.68) 28%,
+      rgba(6, 10, 8, 0.28) 46%,
+      transparent 62%
+    );
+  }
+}
+
+
+/* Vivid cerulean sky, bright cloud white, golden sunflower amber, and rich meadow green inspired by the reference image */
+.horizon-gradient-surface {
+  background-color: #0D65BA;
+  background-image:
+    radial-gradient(
+      ellipse 64% 46% at 16% 86%,
+      rgba(255, 198, 44, 0.62) 0%,
+      rgba(255, 222, 118, 0.48) 38%,
+      transparent 78%
+    ),
+    radial-gradient(
+      ellipse 68% 48% at 86% 90%,
+      rgba(19, 81, 38, 0.52) 0%,
+      rgba(46, 134, 68, 0.36) 44%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 74% 44% at 50% 52%,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(232, 245, 253, 0.42) 52%,
+      transparent 84%
+    ),
+    linear-gradient(
+      180deg,
+      #0D65BA 0%,
+      #1676CD 18%,
+      #42A2E6 40%,
+      #9FD6F7 62%,
+      #E4F2EC 82%,
+      #F3E29C 100%
+    );
 }
 
 @media (prefers-reduced-motion: reduce) {

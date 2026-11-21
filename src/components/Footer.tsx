@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBrief }) => {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5 space-y-5">
             <UnivensLogo variant="horizontal" surface="dark" />
-            <p className="max-w-sm text-sm leading-relaxed text-[#D0CDD3]">
+            <p className="max-w-sm text-sm leading-relaxed text-[#DCE6EC]">
               Univens connects business opportunities with the specialist
               capabilities required to pursue them—turning executive priorities
               into accountable execution.
@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBrief }) => {
               <h3 className="font-display text-sm font-semibold text-white">
                 Company
               </h3>
-              <ul className="space-y-2.5 text-sm text-[#D0CDD3]">
+              <ul className="space-y-2.5 text-sm text-[#DCE6EC]">
                 <li>
                   <button
                     type="button"
@@ -74,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBrief }) => {
               <h3 className="font-display text-sm font-semibold text-white">
                 Capabilities
               </h3>
-              <ul className="space-y-2.5 text-sm text-[#D0CDD3]">
+              <ul className="space-y-2.5 text-sm text-[#DCE6EC]">
                 <li>
                   <button
                     type="button"
@@ -118,7 +118,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBrief }) => {
               <h3 className="font-display text-sm font-semibold text-white">
                 Connect
               </h3>
-              <ul className="space-y-2.5 text-sm text-[#D0CDD3]">
+              <ul className="space-y-2.5 text-sm text-[#DCE6EC]">
                 <li>Bengaluru · India Ecosystem</li>
                 <li>
                   <a
@@ -128,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBrief }) => {
                     connect@univens.com
                   </a>
                 </li>
-                <li className="pt-1 text-xs text-[#A1B9A8]">
+                <li className="pt-1 text-xs text-[#DEEFE4]">
                   For CXOs, Founders & Partners
                 </li>
               </ul>
@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenBrief }) => {
 
         <Separator className="my-10 bg-white/15" />
 
-        <div className="flex flex-col items-start justify-between gap-4 text-xs text-[#D0CDD3] sm:flex-row sm:items-center">
+        <div className="flex flex-col items-start justify-between gap-4 text-xs text-[#DCE6EC] sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} Univens. All rights reserved.</p>
           <p>Global ambition. Indian capabilities.</p>
         </div>

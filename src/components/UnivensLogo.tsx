@@ -4,6 +4,8 @@ import { cn } from "../lib/utils";
 interface UnivensLogoProps {
   variant?: "topbar" | "horizontal" | "mark";
   surface?: "light" | "dark";
+  size?: "default" | "compact";
+  hideMarkOnMobile?: boolean;
   className?: string;
 }
 
@@ -28,6 +30,7 @@ export const UnivensMark: React.FC<{
       <path
         d="M22.7214 12.7649C23.2453 13.2888 22.983 14.1848 22.2593 14.3433L18.9988 15.0573C18.2751 15.2158 18.0127 16.1117 18.5366 16.6356L33.7912 31.8902C34.2753 32.3743 35.0982 32.1929 35.3339 31.5501L36.4848 28.4109C36.7205 27.7682 37.5434 27.5867 38.0275 28.0708L42.3127 32.3561C42.5709 32.6142 42.6556 32.9987 42.53 33.3414L39.7643 40.8848L38.2831 44.9251C38.0475 45.5679 37.2245 45.7493 36.7404 45.2652L7.3454 15.8702L3.78996 12.3155C3.26597 11.7916 3.52841 10.8955 4.25223 10.7371L9.16376 9.66218L17.2403 7.89478C17.5522 7.82651 17.8775 7.92178 18.1033 8.14757L22.7214 12.7649ZM52.572 5.96394L49.7683 13.6055L48.2592 17.815C48.026 18.4653 47.1934 18.6485 46.7089 18.1561L34.3701 5.61647C33.8528 5.09074 34.1174 4.20114 34.8379 4.04353L48.3229 1.09382L53.2161 0.0225465C53.9387 -0.135643 54.5512 0.566293 54.2965 1.26075L52.572 5.96394Z"
         fill={fill}
+        className="transition-[fill] duration-500 ease-[cubic-bezier(0.45,0,0.25,1)]"
       />
     </svg>
   );
@@ -36,6 +39,8 @@ export const UnivensMark: React.FC<{
 export const UnivensLogo: React.FC<UnivensLogoProps> = ({
   variant = "topbar",
   surface = "light",
+  size = "default",
+  hideMarkOnMobile = false,
   className,
 }) => {
   if (variant === "mark") {
@@ -46,14 +51,18 @@ export const UnivensLogo: React.FC<UnivensLogoProps> = ({
     return (
       <span
         className={cn(
-          "inline-flex items-center gap-2.5 whitespace-nowrap shrink-0",
+          "inline-flex items-center whitespace-nowrap shrink-0",
+          hideMarkOnMobile ? "gap-0 md:gap-2.5" : "gap-2.5",
           className
         )}
       >
-        <UnivensMark surface={surface} className="h-6 w-7" />
+        <UnivensMark
+          surface={surface}
+          className={cn("h-6 w-7", hideMarkOnMobile && "hidden md:block")}
+        />
         <span
           className={cn(
-            "font-display text-xl font-bold tracking-tight",
+            "font-display text-xl font-bold tracking-tight transition-colors duration-500 ease-[cubic-bezier(0.45,0,0.25,1)]",
             surface === "dark" ? "text-white" : "text-[#15293A]"
           )}
         >
@@ -63,13 +72,25 @@ export const UnivensLogo: React.FC<UnivensLogoProps> = ({
     );
   }
 
+  const isCompact = size === "compact";
+
   return (
-    <span className={cn("inline-flex items-center gap-3.5 shrink-0", className)}>
-      <UnivensMark surface={surface} className="h-9 w-10" />
-      <span className="flex flex-col leading-none">
+    <span
+      className={cn(
+        "inline-flex items-center shrink-0",
+        isCompact ? "gap-2" : "gap-3",
+        className
+      )}
+    >
+      <UnivensMark
+        surface={surface}
+        className={isCompact ? "h-6 w-7" : "h-9 w-10"}
+      />
+      <span className="flex flex-col leading-none text-left">
         <span
           className={cn(
-            "font-display text-2xl font-bold tracking-tight",
+            "font-display font-bold leading-none tracking-tight transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            isCompact ? "text-[17px]" : "text-2xl",
             surface === "dark" ? "text-white" : "text-[#15293A]"
           )}
         >
@@ -77,8 +98,9 @@ export const UnivensLogo: React.FC<UnivensLogoProps> = ({
         </span>
         <span
           className={cn(
-            "mt-1 text-xs font-normal tracking-normal",
-            surface === "dark" ? "text-[#D0CDD3]" : "text-[#555555]"
+            "font-normal leading-none tracking-[0.01em] whitespace-nowrap transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            isCompact ? "mt-0.5 text-[8.5px]" : "mt-1 text-[10px]",
+            surface === "dark" ? "text-[#DCE6EC]" : "text-[#284054]"
           )}
         >
           Executions First Growth Agency
